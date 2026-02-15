@@ -3,409 +3,509 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Clean Packaging Company — woven PP bags & packaging solutions." />
-  <title>Clean Packaging Company | CPCO</title>
-
-  <!-- Optional: Open Graph (social previews) -->
-  <meta property="og:title" content="Clean Packaging Company | CPCO" />
-  <meta property="og:description" content="Woven PP bags & packaging solutions." />
-  <meta property="og:type" content="website" />
-  <!-- <meta property="og:image" content="https://yourdomain.com/assets/og.jpg" /> -->
+  <title>CPCO | Clean Packaging Company</title>
+  <meta name="description" content="Clean Packaging Company (CPCO) — PP woven bags and packaging solutions. Manufacturing, customization, and reliable supply." />
 
   <style>
     :root{
-      --blue:#1E4996;        /* from your logo */
-      --green:#56BC46;       /* from your logo */
-      --bg:#0b1220;
-      --card:rgba(255,255,255,.06);
-      --border:rgba(255,255,255,.12);
-      --text:rgba(255,255,255,.92);
-      --muted:rgba(255,255,255,.72);
-      --shadow: 0 18px 60px rgba(0,0,0,.35);
-      --radius: 18px;
-      --max: 1120px;
+      --blue:#1E4996;
+      --green:#56BC46;
+      --ink:#0d1b2a;
+      --muted:#51606f;
+      --line:#e7edf3;
+      --bg:#ffffff;
+      --soft:#f6f8fb;
+      --radius:18px;
+      --shadow:0 18px 55px rgba(15, 30, 50, .12);
+      --max:1160px;
     }
+
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans Arabic", "Noto Sans", sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(1000px 600px at 15% 0%, rgba(86,188,70,.18), transparent 55%),
-        radial-gradient(900px 600px at 90% 15%, rgba(30,73,150,.22), transparent 60%),
-        linear-gradient(180deg, #070b14 0%, var(--bg) 45%, #070b14 100%);
-      min-height:100vh;
+      background:var(--bg);
+      color:var(--ink);
     }
-    a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 70px;}
-    .topbar{
-      display:flex; align-items:center; justify-content:space-between; gap:12px;
-      padding:10px 14px;
-      border:1px solid var(--border);
-      border-radius:999px;
-      background:rgba(255,255,255,.03);
+
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
+
+    /* top nav */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      background:rgba(255,255,255,.92);
       backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
     }
-    .brand{display:flex; align-items:center; gap:12px; text-decoration:none;}
-    .brand img{width:42px; height:42px; object-fit:contain; border-radius:10px; background:rgba(255,255,255,.04); padding:6px;}
-    .brand b{letter-spacing:.2px}
-    .pill{
-      display:flex; gap:8px; align-items:center;
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+      height:72px;
+    }
+    .brand{display:flex; align-items:center; gap:12px}
+    .brand img{width:42px; height:42px; object-fit:contain}
+    .brand-title{display:flex; flex-direction:column; line-height:1.05}
+    .brand-title b{letter-spacing:.2px}
+    .brand-title span{color:var(--muted); font-size:12px}
+
+    .nav-links{display:flex; gap:16px; align-items:center}
+    .nav-links a{
+      font-weight:700; font-size:14px; color:#1b2b3a;
+      padding:10px 10px; border-radius:12px;
+    }
+    .nav-links a:hover{background:var(--soft)}
+    .cta{
+      display:flex; gap:10px; align-items:center
     }
     .btn{
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.04);
-      color:var(--text);
-      padding:10px 12px;
+      border:1px solid var(--line);
+      padding:10px 14px;
       border-radius:999px;
-      cursor:pointer;
-      transition:.2s transform, .2s background;
-      font-weight:600;
+      font-weight:800;
       font-size:14px;
+      cursor:pointer;
+      background:#fff;
     }
-    .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.07)}
     .btn.primary{
-      border-color: transparent;
-      background: linear-gradient(135deg, var(--green), #3ad0ff 140%);
-      color:#061015;
-      box-shadow: 0 10px 35px rgba(86,188,70,.18);
+      border:none;
+      color:#fff;
+      background:linear-gradient(135deg, var(--blue), var(--green));
+      box-shadow: 0 10px 25px rgba(30,73,150,.18);
     }
 
+    /* hero */
     .hero{
-      margin-top:22px;
-      padding:34px 20px;
-      border:1px solid var(--border);
-      border-radius: var(--radius);
-      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      position:relative;
-    }
-    .hero:before{
-      content:"";
-      position:absolute; inset:-2px;
+      padding:34px 0 26px;
       background:
-        radial-gradient(800px 500px at 10% 10%, rgba(86,188,70,.18), transparent 60%),
-        radial-gradient(900px 520px at 95% 0%, rgba(30,73,150,.25), transparent 55%);
-      pointer-events:none;
-      filter:saturate(1.05);
+        radial-gradient(900px 420px at 5% 0%, rgba(86,188,70,.14), transparent 65%),
+        radial-gradient(900px 420px at 95% 10%, rgba(30,73,150,.13), transparent 60%);
     }
-    .hero > *{position:relative}
-    .grid{
+    .hero-grid{
       display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:22px;
-      align-items:center;
+      grid-template-columns: 1.05fr .95fr;
+      gap:18px;
+      align-items:stretch;
     }
-    @media (max-width: 920px){
-      .grid{grid-template-columns:1fr}
+    @media (max-width: 980px){ .hero-grid{grid-template-columns:1fr} }
+
+    .hero-copy{
+      padding:26px;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:#fff;
+      box-shadow: var(--shadow);
+    }
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      padding:8px 12px;
+      border-radius:999px;
+      background: rgba(30,73,150,.06);
+      border:1px solid rgba(30,73,150,.12);
+      font-weight:900;
+      font-size:12px;
+      color:var(--blue);
+      letter-spacing:.3px;
+      text-transform:uppercase;
     }
     h1{
-      font-size: 44px;
+      margin:14px 0 10px;
+      font-size:44px;
       line-height:1.05;
-      margin: 0 0 12px;
-      letter-spacing:-.6px;
+      letter-spacing:-.8px;
     }
     .sub{
-      font-size: 16px;
+      margin:0 0 16px;
       color:var(--muted);
-      margin:0 0 18px;
+      font-size:16px;
+      line-height:1.7;
       max-width: 62ch;
     }
-    .kpis{
-      display:flex; flex-wrap:wrap; gap:10px;
-      margin-top: 18px;
+    .hero-actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+    .hero-actions .btn{padding:12px 16px}
+
+    .bullets{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
     }
-    .chip{
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.03);
+    @media (max-width: 560px){ .bullets{grid-template-columns:1fr} }
+    .bullet{
+      border:1px solid var(--line);
+      background:var(--soft);
+      border-radius:14px;
+      padding:12px 12px;
+      display:flex; gap:10px; align-items:flex-start;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px;
+      background:linear-gradient(135deg, var(--blue), var(--green));
+      margin-top:5px;
+      flex:0 0 10px;
+    }
+    .bullet b{display:block; font-size:14px}
+    .bullet span{display:block; color:var(--muted); font-size:13px; margin-top:2px; line-height:1.5}
+
+    .hero-photo{
+      border-radius:var(--radius);
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:var(--soft);
+      box-shadow: var(--shadow);
+      position:relative;
+      min-height: 360px;
+    }
+    .hero-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .hero-badge{
+      position:absolute; left:16px; bottom:16px;
+      background:rgba(255,255,255,.92);
+      border:1px solid var(--line);
+      border-radius:14px;
       padding:10px 12px;
-      border-radius:999px;
-      font-weight:700;
-      font-size:13px;
+      box-shadow: 0 14px 30px rgba(0,0,0,.10);
+      max-width: 80%;
     }
-    .card{
-      border:1px solid var(--border);
-      border-radius: var(--radius);
-      background: var(--card);
-      padding: 18px;
+    .hero-badge b{display:block; font-size:13px}
+    .hero-badge span{display:block; color:var(--muted); font-size:12px; margin-top:2px}
+
+    /* sections */
+    section{padding:34px 0}
+    .section-head{
+      display:flex; justify-content:space-between; align-items:flex-end; gap:14px;
+      margin-bottom:14px;
     }
+    .section-head h2{
+      margin:0;
+      font-size:26px;
+      letter-spacing:-.3px;
+    }
+    .section-head p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.6;
+      max-width: 60ch;
+      font-size:14px;
+    }
+
     .cards{
-      margin-top: 18px;
       display:grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
+      gap:12px;
     }
-    @media (max-width: 920px){
-      .cards{grid-template-columns:1fr}
-    }
-    .cards h3{margin:0 0 8px; font-size:16px}
-    .cards p{margin:0; color:var(--muted); font-size:14px; line-height:1.5}
+    @media (max-width: 980px){ .cards{grid-template-columns:1fr} }
 
-    .section{
-      margin-top: 18px;
-      padding: 18px;
-      border:1px solid var(--border);
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.03);
+    .card{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:#fff;
+      padding:18px;
+      box-shadow: 0 10px 22px rgba(15,30,50,.06);
     }
-    .section h2{margin:0 0 10px; font-size:20px}
-    .two{
+    .card h3{margin:0 0 8px; font-size:16px}
+    .card p{margin:0; color:var(--muted); line-height:1.7; font-size:14px}
+    .tag{
+      display:inline-block;
+      margin-top:12px;
+      font-size:12px;
+      font-weight:900;
+      color:#0b2b15;
+      background: rgba(86,188,70,.14);
+      border:1px solid rgba(86,188,70,.24);
+      padding:6px 10px;
+      border-radius:999px;
+    }
+
+    /* gallery - premium horizontal scroll */
+    .gallery{
+      border:1px solid var(--line);
+      background:var(--soft);
+      border-radius:var(--radius);
+      padding:14px;
+      overflow:hidden;
+    }
+    .rail{
+      display:flex;
+      gap:12px;
+      overflow:auto;
+      scroll-snap-type:x mandatory;
+      padding-bottom:6px;
+    }
+    .rail::-webkit-scrollbar{height:10px}
+    .rail::-webkit-scrollbar-thumb{background:#d6dee7; border-radius:999px}
+    .shot{
+      flex:0 0 340px;
+      height:240px;
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:#fff;
+      scroll-snap-align:start;
+      position:relative;
+    }
+    @media (max-width: 520px){ .shot{flex-basis: 86vw} }
+    .shot img{width:100%; height:100%; object-fit:cover; display:block}
+    .cap{
+      position:absolute; left:12px; bottom:12px;
+      background:rgba(255,255,255,.92);
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:8px 10px;
+      font-weight:900;
+      font-size:12px;
+      color:#1b2b3a;
+      max-width:85%;
+    }
+
+    /* contact */
+    .contact{
       display:grid;
       grid-template-columns: 1fr 1fr;
       gap:12px;
     }
-    @media (max-width: 920px){ .two{grid-template-columns:1fr} }
+    @media (max-width: 980px){ .contact{grid-template-columns:1fr} }
+    .contact .card{padding:20px}
+    .contact b{display:block; margin-top:10px; font-size:13px}
+    .contact span{color:var(--muted); font-size:14px}
 
-    .gallery{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-top: 10px;
-    }
-    @media (max-width: 920px){ .gallery{grid-template-columns:1fr 1fr} }
-    @media (max-width: 520px){ .gallery{grid-template-columns:1fr} }
-    .gallery img{
-      width:100%;
-      height: 210px;
-      object-fit: cover;
-      border-radius: 14px;
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.02);
-    }
-
-    .footer{
-      margin-top: 18px;
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
-      color: var(--muted);
+    /* footer */
+    footer{
+      padding:26px 0 40px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
       font-size:13px;
     }
-
-    /* RTL support */
-    [dir="rtl"] .grid{direction:rtl}
-    [dir="rtl"] .topbar{direction:rtl}
-    [dir="rtl"] .brand{flex-direction:row-reverse}
-    [dir="rtl"] .pill{flex-direction:row-reverse}
+    .footer-inner{display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap}
   </style>
 </head>
 
 <body>
-  <div class="wrap">
 
-    <header class="topbar">
-      <a class="brand" href="#top" aria-label="Home">
+  <div class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top">
         <img src="assets/logo.png" alt="CPCO logo">
-        <div>
-          <b data-i18n="name">Clean Packaging Company</b><br>
-          <span style="color:var(--muted); font-size:12px" data-i18n="tagline">Packaging that performs.</span>
+        <div class="brand-title">
+          <b>Clean Packaging Company</b>
+          <span>PP Woven Bags • Packaging Solutions</span>
         </div>
       </a>
 
-      <div class="pill">
-        <button class="btn" id="langBtn" type="button">العربية</button>
-        <a class="btn primary" href="#contact" data-i18n="ctaTop">Get a Quote</a>
+      <nav class="nav-links" aria-label="Site navigation">
+        <a href="#solutions">Solutions</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="cta">
+        <a class="btn" href="#contact">Request Info</a>
+        <a class="btn primary" href="mailto:info@cleanpackaging-ksa.com">Email Us</a>
       </div>
-    </header>
+    </div>
+  </div>
 
-    <main id="top" class="hero">
-      <div class="grid">
-        <div>
-          <h1 data-i18n="heroTitle">Woven PP Bags & Packaging Solutions</h1>
-          <p class="sub" data-i18n="heroSub">
-            Durable, reliable, and customized packaging for industrial and commercial needs — with consistent quality and on-time delivery.
-          </p>
+  <header class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <div class="kicker">CPCO • CLEAN PACKAGING CO. LTD.</div>
 
-          <div class="pill" style="gap:10px; flex-wrap:wrap;">
-            <a class="btn primary" href="#products" data-i18n="ctaPrimary">Explore Products</a>
-            <a class="btn" href="#gallery" data-i18n="ctaSecondary">See Our Work</a>
-          </div>
+        <h1>Industrial packaging you can rely on.</h1>
+        <p class="sub">
+          We manufacture and supply <b>PP woven bags</b> and customized packaging solutions with consistent quality,
+          dependable delivery, and specifications tailored to your product.
+        </p>
 
-          <div class="kpis">
-            <span class="chip" data-i18n="k1">Custom sizes & printing</span>
-            <span class="chip" data-i18n="k2">Bulk orders</span>
-            <span class="chip" data-i18n="k3">Quality-focused</span>
-          </div>
+        <div class="hero-actions">
+          <a class="btn primary" href="#solutions">Explore Solutions</a>
+          <a class="btn" href="#gallery">View Factory & Shipping</a>
         </div>
 
-        <div class="card">
-          <h3 style="margin:0 0 10px" data-i18n="quickTitle">Quick Info</h3>
-          <div style="display:grid; gap:10px; color:var(--muted); font-size:14px; line-height:1.5">
-            <div><b style="color:var(--text)" data-i18n="qi1t">What we do:</b> <span data-i18n="qi1">PP woven bags, packaging & customization.</span></div>
-            <div><b style="color:var(--text)" data-i18n="qi2t">Industries:</b> <span data-i18n="qi2">Agriculture, chemicals, cement, food, logistics.</span></div>
-            <div><b style="color:var(--text)" data-i18n="qi3t">Lead time:</b> <span data-i18n="qi3">Depends on order size & specs.</span></div>
-            <div style="border-top:1px solid var(--border); padding-top:10px">
-              <span data-i18n="note">Replace the contact details below with your real phone/email/address.</span>
+        <div class="bullets">
+          <div class="bullet">
+            <div class="dot"></div>
+            <div>
+              <b>Custom specifications</b>
+              <span>Sizes, colors, GSM, and printing based on your requirements.</span>
+            </div>
+          </div>
+          <div class="bullet">
+            <div class="dot"></div>
+            <div>
+              <b>Production & supply</b>
+              <span>Built for bulk orders with steady output and quality control.</span>
+            </div>
+          </div>
+          <div class="bullet">
+            <div class="dot"></div>
+            <div>
+              <b>Packaging for industry</b>
+              <span>Agriculture, chemicals, cement, food, logistics, and more.</span>
+            </div>
+          </div>
+          <div class="bullet">
+            <div class="dot"></div>
+            <div>
+              <b>Reliable delivery</b>
+              <span>Organized warehousing and shipment readiness.</span>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="cards" id="products">
-        <div class="card">
-          <h3 data-i18n="p1t">PP Woven Bags</h3>
-          <p data-i18n="p1d">Multiple sizes, GSM, colors, and printing options for heavy-duty use.</p>
+      <div class="hero-photo">
+        <!-- Pick your best hero image here -->
+        <img src="assets/images/building.jpg" alt="CPCO facility">
+        <div class="hero-badge">
+          <b>Clean Packaging Company (CPCO)</b>
+          <span>Manufacturing • Warehousing • Shipping</span>
         </div>
-        <div class="card">
-          <h3 data-i18n="p2t">Customized Packaging</h3>
-          <p data-i18n="p2d">Branding, labeling, and specifications tailored to your product and market.</p>
-        </div>
-        <div class="card">
-          <h3 data-i18n="p3t">Quality & Consistency</h3>
-          <p data-i18n="p3d">Process-driven production, inspection, and continuous improvement.</p>
+      </div>
+    </div>
+  </header>
+
+  <section id="solutions">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>Solutions</h2>
+          <p>Simple, clear, and focused on what customers care about: specification, consistency, and dependable supply.</p>
         </div>
       </div>
 
-      <section class="section" id="gallery">
-        <h2 data-i18n="galleryTitle">Gallery</h2>
-        <div style="color:var(--muted); font-size:14px" data-i18n="galleryHint">
-          Put your photos in <code style="color:#cfe7ff">assets/images/</code> and update the file names below.
-        </div>
-        <div class="gallery" style="margin-top:12px">
-          <img src="assets/images/photo1.jpg" alt="Gallery photo 1">
-          <img src="assets/images/photo2.jpg" alt="Gallery photo 2">
-          <img src="assets/images/photo3.jpg" alt="Gallery photo 3">
-        </div>
-      </section>
-
-      <section class="section two" id="about">
+      <div class="cards">
         <div class="card">
-          <h2 data-i18n="aboutTitle">About CPCO</h2>
-          <p style="margin:0; color:var(--muted); line-height:1.7" data-i18n="aboutText">
-            Clean Packaging Company delivers high-quality woven packaging solutions with a focus on durability, customization, and dependable supply.
-          </p>
+          <h3>PP Woven Bags</h3>
+          <p>Durable woven packaging for heavy-duty use. Options for different applications and handling requirements.</p>
+          <span class="tag">Sizes • GSM • Colors</span>
         </div>
-        <div class="card" id="contact">
-          <h2 data-i18n="contactTitle">Contact</h2>
-          <p style="margin:0; color:var(--muted); line-height:1.8">
-            <b style="color:var(--text)" data-i18n="phone">Phone:</b> <span>+966 XX XXX XXXX</span><br/>
-            <b style="color:var(--text)" data-i18n="email">Email:</b> <span>sales@yourdomain.com</span><br/>
-            <b style="color:var(--text)" data-i18n="location">Location:</b> <span>Yanbu, Saudi Arabia</span>
-          </p>
-          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-            <a class="btn primary" href="mailto:sales@yourdomain.com" data-i18n="emailBtn">Email Us</a>
-            <a class="btn" href="tel:+966000000000" data-i18n="callBtn">Call</a>
+
+        <div class="card">
+          <h3>Customization</h3>
+          <p>Branding and printing options to match your product and market requirements.</p>
+          <span class="tag">Printing • Labeling</span>
+        </div>
+
+        <div class="card">
+          <h3>Quality & Consistency</h3>
+          <p>Process-driven production with inspections and continuous improvement for stable output quality.</p>
+          <span class="tag">QC • Repeatability</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>Gallery</h2>
+          <p>Real production, warehousing, and shipments from CPCO.</p>
+        </div>
+      </div>
+
+      <div class="gallery">
+        <div class="rail">
+          <div class="shot">
+            <img src="assets/images/forklift.jpg" alt="Warehouse handling">
+            <div class="cap">Warehouse handling</div>
+          </div>
+
+          <div class="shot">
+            <img src="assets/images/weaving1.jpg" alt="Weaving line">
+            <div class="cap">Weaving line</div>
+          </div>
+
+          <div class="shot">
+            <img src="assets/images/weaving2.jpg" alt="Production floor">
+            <div class="cap">Production floor</div>
+          </div>
+
+          <div class="shot">
+            <img src="assets/images/rolls-warehouse.jpg" alt="Material rolls storage">
+            <div class="cap">Material storage</div>
+          </div>
+
+          <div class="shot">
+            <img src="assets/images/truck1.jpg" alt="Shipment ready">
+            <div class="cap">Shipment ready</div>
+          </div>
+
+          <div class="shot">
+            <img src="assets/images/truck2.jpg" alt="Bulk transport">
+            <div class="cap">Bulk transport</div>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </section>
 
-      <div class="footer">
-        <div>© <span id="year"></span> <span data-i18n="name">Clean Packaging Company</span></div>
-        <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <a href="#products" data-i18n="navProducts">Products</a>
-          <span style="opacity:.35">•</span>
-          <a href="#gallery" data-i18n="navGallery">Gallery</a>
-          <span style="opacity:.35">•</span>
-          <a href="#contact" data-i18n="navContact">Contact</a>
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>Contact</h2>
+          <p>Replace the placeholders with your real company details, then publish.</p>
         </div>
       </div>
-    </main>
-  </div>
+
+      <div class="contact">
+        <div class="card">
+          <h3>Get in touch</h3>
+          <p>For quotations and specifications, contact our sales team.</p>
+
+          <b>Phone</b>
+          <span>+96658 206 2628</span>
+
+          <b>Email</b>
+          <span>info@cleanpackaging-ksa.com</span>
+
+          <b>Location</b>
+          <span>Yanbu, Saudi Arabia</span>
+
+          <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn primary" href="mailto:info@cleanpackaging-ksa.com">Email Sales</a>
+            <a class="btn" href="tel:+966582062628">Call</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div style="margin-top:14px; border-top:1px ; padding-top:14px;">
+            <b>What to include in your message</b>
+            <span>
+              Bag size • GSM • color • printing • quantity • delivery location
+            </span>
+          </div>
+
+          <div style="margin-top:14px;">
+            <a class="btn" href="mailto:info@cleanpackaging-ksa.com?subject=CPCO%20Request%20for%20Quote&body=Hello%20CPCO%2C%0A%0APlease%20quote%20the%20following%3A%0A-%20Bag%20size%3A%0A-%20GSM%3A%0A-%20Color%3A%0A-%20Printing%3A%0A-%20Quantity%3A%0A-%20Delivery%20location%3A%0A%0AThank%20you.">
+              Start RFQ Email
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div>© <span id="year"></span> Clean Packaging Company (CPCO) - Nawar Alhussain</div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="#solutions">Solutions</a>
+        <span>•</span>
+        <a href="#gallery">Gallery</a>
+        <span>•</span>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
 
   <script>
-    // year
     document.getElementById("year").textContent = new Date().getFullYear();
-
-    // simple i18n
-    const dict = {
-      en: {
-        name: "Clean Packaging Company",
-        tagline: "Packaging that performs.",
-        ctaTop: "Get a Quote",
-        heroTitle: "Woven PP Bags & Packaging Solutions",
-        heroSub: "Durable, reliable, and customized packaging for industrial and commercial needs — with consistent quality and on-time delivery.",
-        ctaPrimary: "Explore Products",
-        ctaSecondary: "See Our Work",
-        k1: "Custom sizes & printing",
-        k2: "Bulk orders",
-        k3: "Quality-focused",
-        quickTitle: "Quick Info",
-        qi1t: "What we do:",
-        qi1: "PP woven bags, packaging & customization.",
-        qi2t: "Industries:",
-        qi2: "Agriculture, chemicals, cement, food, logistics.",
-        qi3t: "Lead time:",
-        qi3: "Depends on order size & specs.",
-        note: "Replace the contact details below with your real phone/email/address.",
-        p1t: "PP Woven Bags",
-        p1d: "Multiple sizes, GSM, colors, and printing options for heavy-duty use.",
-        p2t: "Customized Packaging",
-        p2d: "Branding, labeling, and specifications tailored to your product and market.",
-        p3t: "Quality & Consistency",
-        p3d: "Process-driven production, inspection, and continuous improvement.",
-        galleryTitle: "Gallery",
-        galleryHint: "Put your photos in assets/images/ and update the file names below.",
-        aboutTitle: "About CPCO",
-        aboutText: "Clean Packaging Company delivers high-quality woven packaging solutions with a focus on durability, customization, and dependable supply.",
-        contactTitle: "Contact",
-        phone: "Phone:",
-        email: "Email:",
-        location: "Location:",
-        emailBtn: "Email Us",
-        callBtn: "Call",
-        navProducts: "Products",
-        navGallery: "Gallery",
-        navContact: "Contact"
-      },
-      ar: {
-        name: "شركة التغليف النظيف",
-        tagline: "تغليف يعتمد عليه.",
-        ctaTop: "اطلب عرض سعر",
-        heroTitle: "أكياس بولي بروبلين منسوجة وحلول تغليف",
-        heroSub: "تغليف متين وموثوق ومخصص للاحتياجات الصناعية والتجارية — بجودة ثابتة وتسليم في الوقت.",
-        ctaPrimary: "استعرض المنتجات",
-        ctaSecondary: "شاهد أعمالنا",
-        k1: "مقاسات وطباعة مخصصة",
-        k2: "طلبات بالجملة",
-        k3: "تركيز على الجودة",
-        quickTitle: "معلومات سريعة",
-        qi1t: "ماذا نقدم:",
-        qi1: "أكياس منسوجة PP وتغليف وخيارات تخصيص.",
-        qi2t: "القطاعات:",
-        qi2: "الزراعة، الكيماويات، الإسمنت، الغذاء، اللوجستيات.",
-        qi3t: "مدة التنفيذ:",
-        qi3: "حسب حجم الطلب والمواصفات.",
-        note: "عدّل بيانات التواصل بالهاتف/البريد/العنوان الحقيقي.",
-        p1t: "أكياس PP منسوجة",
-        p1d: "مقاسات متعددة، أوزان (GSM)، ألوان، وخيارات طباعة للاستخدام الشاق.",
-        p2t: "تغليف مخصص",
-        p2d: "تصميم وهوية وطباعة ومواصفات حسب منتجك وسوقك.",
-        p3t: "جودة وثبات",
-        p3d: "إنتاج منظم وفحص وتحسين مستمر لضمان الاعتمادية.",
-        galleryTitle: "معرض الصور",
-        galleryHint: "ضع الصور داخل assets/images/ ثم عدّل أسماء الملفات بالأسفل.",
-        aboutTitle: "عن الشركة",
-        aboutText: "تقدم شركة التغليف النظيف حلول تغليف منسوج عالية الجودة مع التركيز على المتانة والتخصيص وتوريد موثوق.",
-        contactTitle: "تواصل معنا",
-        phone: "الهاتف:",
-        email: "البريد:",
-        location: "الموقع:",
-        emailBtn: "راسلنا",
-        callBtn: "اتصال",
-        navProducts: "المنتجات",
-        navGallery: "المعرض",
-        navContact: "التواصل"
-      }
-    };
-
-    let lang = "en";
-    const langBtn = document.getElementById("langBtn");
-
-    function applyLang(next){
-      lang = next;
-      document.documentElement.lang = (lang === "ar") ? "ar" : "en";
-      document.documentElement.dir = (lang === "ar") ? "rtl" : "ltr";
-      document.querySelectorAll("[data-i18n]").forEach(el=>{
-        const key = el.getAttribute("data-i18n");
-        if (dict[lang][key]) el.textContent = dict[lang][key];
-      });
-      langBtn.textContent = (lang === "ar") ? "English" : "العربية";
-    }
-
-    langBtn.addEventListener("click", ()=> applyLang(lang === "en" ? "ar" : "en"));
-    applyLang("en");
   </script>
 </body>
 </html>
